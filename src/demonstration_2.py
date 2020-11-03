@@ -28,3 +28,16 @@ Explanation: The input array represents the integer 999. 999 + 1 = 1000.
 def plus_one(digits):
     # Your code here
 
+    # start loop backwards
+    for i in range(len(digits) - 1, -1, -1):
+        if digits[i] == 9:
+            digits[i] = 0
+        else: 
+            digits[i] += 1
+            return digits
+    
+    #if we reach here, we had a situation where ever digit was 9 
+    # add 1
+    return [1] + digits
+
+print(plus_one([9,9,9]))
